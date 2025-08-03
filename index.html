@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emotion-Based Music Player</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Authentication UI -->
+  <div id="auth-container">
+    <h1 id="auth-title">Sign In</h1>
+    <div id="auth-form">
+      <input type="email" id="email" placeholder="Email" />
+      <div class="password-container">
+        <input type="password" id="password" placeholder="Password" />
+        <span id="toggle-password">👁️</span>
+      </div>
+      <button id="auth-button">Sign In</button>
+      <button id="google-signin">Sign in with Google</button>
+      <p id="auth-error" class="error"></p>
+      <p id="auth-toggle">Don't have an account? <a href="#" id="toggle-link">Sign Up</a></p>
+    </div>
+  </div>
+
+  <!-- Music Player UI -->
+  <div id="app-container" class="hidden">
+    <div class="header-bar">
+      <h1>Emotion-Based Music Player</h1>
+      <div>
+        <span id="user-info"></span>
+        <button id="sign-out">Sign Out</button>
+      </div>
+    </div>
+  
+    <div id="nav-content" class="hidden"></div>
+
+    <main>
+      <section id="mood-selector">
+        <h2>Select Your Mood</h2>
+        <div id="mood-buttons"></div>
+      </section>
+      <section id="playlist">
+        <h2 id="playlist-title">Select a mood to view the playlist</h2>
+        <ul id="song-list"></ul>
+      </section>
+    </main>
+    <!-- Player Bar -->
+    <div id="player-bar" class="player-bar hidden">
+      <div id="player-content">
+        <img id="song-thumbnail" src="https://via.placeholder.com/100" alt="Song Thumbnail" />
+        <div id="player-info">
+          <p id="player-text">Select a song to play</p>
+          <audio id="audio-player" controls></audio>
+          <div class="player-controls">
+            <button id="shuffle-toggle">🔀</button>
+            <button id="prev-song">⏮️</button>
+            <button id="next-song">⏭️</button>
+            <button id="loop-toggle">🔁 Repeat</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Fullscreen Spotify-Style Player Overlay -->
+<div id="player-overlay" class="hidden">
+  <div class="overlay-content">
+    <img id="overlay-thumbnail" src="https://via.placeholder.com/300" alt="Album Art" />
+    <div class="overlay-info">
+      <h3 id="overlay-title">Song Title</h3>
+      <p id="overlay-artist">Artist Name</p>
+    </div>
+    <div class="overlay-controls">
+      <button id="overlay-shuffle">🔀</button>
+      <button id="overlay-prev">⏮️</button>
+      <button id="overlay-play">▶️</button>
+      <button id="overlay-next">⏭️</button>
+      <button id="overlay-loop">🔁</button>
+    </div>
+    <div class="overlay-extra">
+      <button id="overlay-fav">❤️</button>
+      <button id="overlay-close">⬇️</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  
+ <!-- Bottom Navigation Bar -->
+<nav id="bottom-nav">
+  <button data-tab="home" class="nav-btn active">🏠 Home</button>
+  <button data-tab="search" class="nav-btn">🔍 Search</button>
+  <button data-tab="library" class="nav-btn">📚 Your Library</button>
+</nav>
+
+</footer>
+  </div>
+  
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
